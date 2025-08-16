@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split PDF</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #download-links a {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background-color: #e9f7ff;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        #download-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Split PDF</h1>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="pdf-input">Upload a PDF File to Split</label>
+                <input type="file" id="pdf-input" accept=".pdf">
+            </div>
+
+            <button class="btn" id="split-btn">Split PDF</button>
+            <p id="status" style="margin-top: 1rem;"></p>
+
+            <div id="download-links-container" style="margin-top: 1.5rem;">
+                <h3>Split Pages:</h3>
+                <div id="download-links"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/split-pdf.js"></script>
+</body>
+</html>

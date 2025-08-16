@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Page Rotator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PDF Page Rotator</h1>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="pdf-input">Upload a PDF File</label>
+                <input type="file" id="pdf-input" accept=".pdf">
+            </div>
+
+            <div class="form-group">
+                <label for="pages-input">Pages to Rotate (e.g., "all", "1, 3, 5-7")</label>
+                <input type="text" id="pages-input" value="all">
+            </div>
+
+            <div class="form-group">
+                <label for="angle-select">Rotation Angle:</label>
+                <select id="angle-select">
+                    <option value="90">90 degrees clockwise</option>
+                    <option value="180">180 degrees</option>
+                    <option value="270">270 degrees clockwise (90 counter-clockwise)</option>
+                </select>
+            </div>
+
+            <button class="btn" id="rotate-btn">Rotate PDF</button>
+            <a href="#" class="btn" id="download-btn" style="display: none;" download="rotated.pdf">Download Rotated PDF</a>
+            <p id="status" style="margin-top: 1rem;"></p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/pdf-rotator.js"></script>
+</body>
+</html>

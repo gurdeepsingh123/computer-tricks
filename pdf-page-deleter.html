@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Page Deleter</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tool-container {
+            max-width: 90%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #preview-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            min-height: 100px;
+        }
+        .page-preview {
+            position: relative;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .page-preview canvas {
+            width: 100%;
+            height: auto;
+        }
+        .page-preview.selected {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+        .page-number {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PDF Page Deleter</h1>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="pdf-input">Upload a PDF File</label>
+                <input type="file" id="pdf-input" accept=".pdf">
+            </div>
+
+            <p>Click on the pages you want to delete.</p>
+            <div id="preview-container">
+                <p>PDF previews will appear here...</p>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <button class="btn" id="delete-btn">Delete Selected Pages</button>
+                <a href="#" class="btn" id="download-btn" style="display: none;" download="deleted.pdf">Download Modified PDF</a>
+            </div>
+            <p id="status" style="margin-top: 1rem;"></p>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/pdf-page-deleter.js"></script>
+</body>
+</html>
