@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge PDF</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #file-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        #file-list li {
+            background-color: #f1f1f1;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Merge PDF</h1>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="pdf-input">Upload PDF Files (select multiple)</label>
+                <input type="file" id="pdf-input" accept=".pdf" multiple>
+            </div>
+
+            <ul id="file-list"></ul>
+
+            <button class="btn" id="merge-btn">Merge PDFs</button>
+            <a href="#" class="btn" id="download-btn" style="display: none;" download="merged.pdf">Download Merged PDF</a>
+            <p id="status" style="margin-top: 1rem;"></p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="js/merge-pdf.js"></script>
+</body>
+</html>

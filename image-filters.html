@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filters</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .filter-buttons {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .preview-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        .preview-container canvas {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Image Filters</h1>
+    </header>
+
+    <main>
+        <div class="tool-container">
+            <div class="form-group">
+                <label for="image-input">Upload an Image</label>
+                <input type="file" id="image-input" accept="image/*">
+            </div>
+
+            <div class="filter-buttons">
+                <button class="btn" data-filter="grayscale(100%)">Grayscale</button>
+                <button class="btn" data-filter="sepia(100%)">Sepia</button>
+                <button class="btn" data-filter="invert(100%)">Invert</button>
+                <button class="btn btn-secondary" data-filter="none">Reset</button>
+            </div>
+
+            <a href="#" class="btn" id="download-btn" style="display: none;" download="filtered-image.png">Download Filtered Image</a>
+
+            <div class="preview-container">
+                <canvas id="filter-canvas"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/image-filters.js"></script>
+</body>
+</html>
